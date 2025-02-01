@@ -19,7 +19,7 @@ dependencies {
     implementation(libs.kotlin.stdlib.jdk8)
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-management")
-    implementation("io.projectreactor:reactor-core:3.6.11")
+    implementation("io.projectreactor:reactor-core:3.7.2")
     testImplementation("io.micronaut.test:micronaut-test-kotest5")
 }
 
