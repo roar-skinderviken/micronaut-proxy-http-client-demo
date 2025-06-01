@@ -1,6 +1,6 @@
 plugins {
     id("org.jetbrains.kotlin.jvm") version "2.1.10"
-    id("com.google.devtools.ksp") version "2.1.10-1.0.31"
+    id("com.google.devtools.ksp") version "2.1.21-2.0.1"
     id("io.micronaut.application") version "4.5.3"
 }
 
