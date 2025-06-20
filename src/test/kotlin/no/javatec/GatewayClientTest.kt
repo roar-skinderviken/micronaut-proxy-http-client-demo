@@ -13,7 +13,7 @@ class GatewayClientTest(
             val response = gatewayClient.getLiveness()
 
             Then("I should get a response") {
-                response shouldBe "{\"status\":\"UNKNOWN\"}"
+                response shouldBe "{\"status\":\"UP\"}"
             }
         }
     }
