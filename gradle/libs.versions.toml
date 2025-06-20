@@ -2,7 +2,7 @@
 micronaut-platform-version = "4.7.6"
 micronaut-application-version = "4.4.5"
 kotlin-version = "2.1.10"
-devtools-ksp-version = "2.1.10-1.0.30"
+devtools-ksp-version = "2.1.21-2.0.2"
 
 [libraries]
 # Kotlin
