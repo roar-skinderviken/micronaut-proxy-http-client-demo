@@ -20,7 +20,7 @@ dependencies {
     runtimeOnly("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-management")
-    implementation("io.projectreactor:reactor-core:3.7.5")
+    implementation("io.projectreactor:reactor-core:3.7.7")
     testImplementation("io.micronaut.test:micronaut-test-kotest5")
 }
 
