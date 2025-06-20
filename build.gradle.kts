@@ -1,7 +1,7 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.1.10"
-    id("com.google.devtools.ksp") version "2.1.10-1.0.30"
-    id("io.micronaut.application") version "4.4.5"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.micronaut.application)
 }
 
 version = "0.1"
@@ -12,11 +12,12 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.kotlin.reflect)
+    implementation(libs.kotlin.stdlib.jdk8)
+
     runtimeOnly("org.yaml:snakeyaml")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("io.micronaut.serde:micronaut-serde-jackson")
-    implementation(libs.kotlin.reflect)
-    implementation(libs.kotlin.stdlib.jdk8)
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-management")
     implementation("io.projectreactor:reactor-core:3.7.3")
@@ -27,7 +28,7 @@ application { mainClass = "no.javatec.ApplicationKt" }
 kotlin { jvmToolchain(21) }
 
 micronaut {
-    version = libs.versions.micronautPlatform
+    version = libs.versions.micronaut.platform.version
     runtime("netty")
     testRuntime("kotest5")
     processing {
