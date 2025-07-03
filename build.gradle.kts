@@ -23,8 +23,20 @@ dependencies {
     testImplementation("io.micronaut.test:micronaut-test-kotest5")
 }
 
-application { mainClass = "no.javatec.ApplicationKt" }
-kotlin { jvmToolchain(21) }
+application {
+    mainClass = "no.javatec.ApplicationKt"
+}
+
+kotlin {
+    jvmToolchain(21)
+    compilerOptions {
+        freeCompilerArgs
+            .addAll(
+                "-Xjsr305=strict",
+                "-Xannotation-default-target=param-property"
+            )
+    }
+}
 
 micronaut {
     version = libs.versions.micronaut.platform.version
@@ -34,6 +46,16 @@ micronaut {
         incremental(true)
         annotations("no.javatec.*")
     }
+}
+
+tasks.test {
+    jvmArgs(
+        "-Xshare:off",
+        "-XX:+EnableDynamicAgentLoading",
+        "-Dkotest.framework.classpath.scanning.autoscan.disable=true",
+        "-Dkotest.framework.config.fqn=io.kotest.provided.ProjectConfig",
+    )
+    useJUnitPlatform()
 }
 
 
